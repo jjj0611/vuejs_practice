@@ -79,4 +79,58 @@ new Vue({
 ```
 
 
+vue js tutorial#3
+
+data
+  - data {} 부분에 우리는 원하는 만큼의 데이터를 저장할 수 있다.
+  - 예를 들면 또 다른 데이터 property를 추가해보자. job이라는 이름으로 student를 등록한다.
+  - 그러면 다시 {{job}}이라는 형태로 해당 데이터를 output할 수 있다.
+
+
+method
+  - vue instance에 method 역시 추가할 수 있다.
+  - data와 마찬가지로 우리가 원하는 만큼의 다른 method를 추가할 수 잇다.
+  - greet이라는 이름의 메서드를 추가하고, DOM에 output할 수 있는 것을 return 하는 메서드로 정의해보자.
+```
+new Vue({
+  el: '#app-vue',
+  data: {
+    name: 'jaeju',
+    job: 'student'
+  },
+  methods: {
+    greet: function() {
+      return 'Good Morning'
+    }
+  }
+});
+```
+  - 이렇게 하면 우리가 해야할 것은 해당 메서드를 호출하기만 하면 된다. 메서드를 호출할 때는 {{}}이 안에 넣어주면 된다.
+```
+<div id='app-vue'>
+<p> {{greet()}} </p>
+</div>
+```
+  - greet가 메서드인 것을 감안하면 parameter를 전달해 줄 수 있다는 것은 당연하다.
+  - 또한 메서드 안에서 data에 있는 값을 사용할 수도 있다.
+```
+methods: {
+  greet: function(time) {
+    return 'Good ' + time + ' ' + this.name
+  }
+}
+```
+  - vue instance 내에 있는 데이터이므로 this로 접근이 가능하다.
+  - this.data.name이 아니라 this.name으로 바로 접근 가능하다.
+
+
+onemore thing
+  - vue instance의 data나 method를 div tag 밖에서 접근하면 어떻게 될까?
+  - vue instance의 el property를 기억해보자. 이것은 해당 instance가 el property에 정의된 곳을 control한다는 것이다.
+  - 하지만 div tag 밖으로 나가게 되면 더이상 어떤 것도 컨트롤하지 못한다.
+  - 따라서 'vue-app' id를 가진 div 태그 밖에서는 어떠한 data나 method도 사용할 수가 없다.
+
+
+to learn
+- this.data.name이 아니라 this.name으로 접근이 가능한 이유가 proxies them을 하기 떄문이라는데 이게 어떤 의미일까?
 
