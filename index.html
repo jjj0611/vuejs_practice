@@ -10,15 +10,11 @@
 </head>
 <body>
   <div id="vue-app">
-    <h1>Events</h1>
-    <button @click.once="add(1)">Add a Year</button>
-    <button v-on:click="subtract(1)">Subtract a Year</button>
-    <button v-on:dblclick="add(10)">Add 10 Year</button>
-    <button @dblclick="subtract(10)">Subtract 10 Year</button>
-    <p>My age is {{ age }}</p>
-    
-    <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
-    <a v-on:click.prevent="click" href="https://www.github.com/jjj0611">jjj0611's github</a>
+    <h1>Keyboard Events</h1>
+    <label>Name:</label>
+    <input type="text" v-on:keyup.enter="logName">
+    <label>Age:</label>
+    <input type="text" v-on:keyup.alt.enter="logAge">
   </div>
 
   <script src="app.js"></script>
