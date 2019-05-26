@@ -10,12 +10,20 @@
 </head>
 <body>
   <div id="vue-app">
-    <button v-on:click="a++">Add to A</button>
-    <button v-on:click="b++">Add to B</button>
-    <p>A - {{ a }}</p>
-    <p>B - {{ b }}</p>
-    <p>Age + A = {{ addToA }}</p>
-    <p>Age + B = {{ addToB }}</p>
+    <h1>Dynamic CSS</h1>
+    <h2>Example 1</h2>
+    <!-- <div v-bind:class="{red:true}">
+      <span>Jang</span>
+    </div> -->
+    <!-- <div v-on:click="available = !available" v-bind:class="{available: available}">
+      <span>Jang</span>
+    </div> -->
+    <h2>Example 2</h2>
+    <button v-on:click="nearby = !nearby">Toggle nearby</button>
+    <button v-on:click="available = !available">Toggle available</button>
+    <div v-bind:class="compClasses">
+      <span>Jang</span>
+    </div>
   </div>
 
   <script src="app.js"></script>
