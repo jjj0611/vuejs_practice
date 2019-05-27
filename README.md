@@ -7,7 +7,7 @@ computed property이다.
 이번 시간 예제를 통해서 computed property와 method의 차이점에 대해 알아보자.
 
 
-<b><font size="3">Computed properties</font></b>
+<b><font size="10">Computed properties</font></b>
 
 
 method 생성하기
