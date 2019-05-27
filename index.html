@@ -10,27 +10,20 @@
 </head>
 <body>
   <div id="vue-app">
-    <h1>Looping through lists</h1>
-    <ul>
-      <li v-for="character in characters">{{ character }}</li>
-    </ul>
+    <!-- bag image -->
+    <div id="bag" v-bind:class="{ burst: ended }"></div>
 
-    <ul>
-      <li v-for="(ninja, index) in ninjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
-    </ul>
-
-    <template v-for="(ninja, index) in ninjas">
-      <h3>{{ index }} . {{ ninja.name }}</h3>
-      <p>{{ ninja.age }}</p>
-    </template>
-
-    <template v-for="ninja in ninjas">
-      <div v-for="(val, key) in ninja">
-        <p>{{ key }} - {{ val }}</p>
-      </div>
-    </template>
-    
+    <!-- bag health -->
+    <div id="bag-health">
+      <div v-bind:style="{width: health + '%'}"></div>
     </div>
+
+    <!-- game controls -->
+    <div id="controls">
+      <button v-on:click="punch" v-show="!ended">Punch</button>
+      <button v-on:click="restart">Restart</button>
+    </div>
+
   </div>
 
   <script src="app.js"></script>
