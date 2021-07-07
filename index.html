@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS Tutorials</title>
+    <script src="https://unpkg.com/vue" ></script>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="vue-app">
+    <h1>Conditionals</h1>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <!-- <p v-if="error">There has been an Error!!</p>
+    <p v-else-if="success">Whoooo, Success :) </p> -->
+    <p v-show="error">There has been an Error!</p>
+    <p v-show="success">Whoooo, Success :)</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
